@@ -1,0 +1,328 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Fondo estrellado */
+.stars, .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stars {
+    background: #000 url(https://i.imgur.com/YKY28eT.png) repeat top center;
+    z-index: -2;
+}
+
+.twinkling {
+    background: transparent url(https://i.imgur.com/XYMF4ca.png) repeat top center;
+    z-index: -1;
+    animation: move-twinkle 200s linear infinite;
+}
+
+@keyframes move-twinkle {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #FF9A8B, #FF6B95, #44107A, #231557);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+/* Galería de fotos */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.memory-card {
+    perspective: 1000px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.memory-card:hover .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-front, .memory-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.memory-card-front {
+    background-color: #fff;
+}
+
+.memory-card-back {
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.memory-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.memory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.memory-card:hover .memory-overlay {
+    opacity: 1;
+}
+
+.memory-overlay p {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.memory-card-back h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.memory-card-back p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.memory-card-back .date {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Sección de mensaje */
+.message-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.message-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #FF6B95;
+}
+
+.birthday-message {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.birthday-message p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Reproductor de música */
+.music-player {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.music-player h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+}
+
+#play-button {
+    background: linear-gradient(45deg, #FF6B95, #44107A);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 149, 0.3);
+}
+
+#play-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 149, 0.4);
+}
+
+#play-button:active {
+    transform: translateY(1px);
+}
+
+/* Botón de volver */
+.back-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Animaciones */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .memory-card {
+        height: 250px;
+    }
+    
+    .message-section h2 {
+        font-size: 2rem;
+    }
+    
+    .birthday-message p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-title {
+        font-size: 2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-card {
+        height: 280px;
+    }
+    
+    .message-section {
+        padding: 1.5rem;
+    }
+    
+    .message-section h2 {
+        font-size: 1.8rem;
+    }
+}

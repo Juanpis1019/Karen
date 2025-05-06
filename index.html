@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta regresiva para el cumpleaños</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="countdown-wrapper">
+            <h1 class="title">¡Falta <span class="highlight">muy poco</span> para tu cumpleaños!</h1>
+            <div class="countdown" id="countdown">
+                <div class="time-section">
+                    <div class="time-group">
+                        <div class="time-box">
+                            <div class="time" id="days">00</div>
+                            <span class="label">Días</span>
+                        </div>
+                    </div>
+                    <div class="time-group">
+                        <div class="time-box">
+                            <div class="time" id="hours">00</div>
+                            <span class="label">Horas</span>
+                        </div>
+                    </div>
+                    <div class="time-group">
+                        <div class="time-box">
+                            <div class="time" id="minutes">00</div>
+                            <span class="label">Minutos</span>
+                        </div>
+                    </div>
+                    <div class="time-group">
+                        <div class="time-box">
+                            <div class="time" id="seconds">00</div>
+                            <span class="label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message" id="message">
+                <p>La sorpresa llegará pronto...</p>
+            </div>
+        </div>
+        
+        <div class="confetti-container" id="confetti-container"></div>
+        
+        <div class="birthday-message hidden" id="birthday-message">
+            <h1 class="celebration-title">¡Feliz Cumpleaños!</h1>
+            <p class="celebration-text">Hoy es tu cumpleaños y a pesar de que estamos lejos te queria dar un detalle muy bonito</p>
+            <p class="personal-message">Eres alguien muy importante y te mereces muchas cosas buenas.</p>
+            <div class="cake-animation">
+                <div class="cake">
+                    <div class="plate"></div>
+                    <div class="cake-bottom"></div>
+                    <div class="cake-middle"></div>
+                    <div class="cake-top"></div>
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="galeria.html" class="gallery-button">Ver tu sorpresa</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
