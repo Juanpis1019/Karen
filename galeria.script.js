@@ -7,7 +7,7 @@ function playMusic() {
     if (!audio) {
         // Puedes reemplazar este enlace con una canción de cumpleaños de tu elección
         audio = new Audio(audio1.mp3);
-        audio.volume = 0.5;
+        audio.volume = 100;
         audio.loop = true;
     }
     
