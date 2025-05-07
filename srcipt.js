@@ -1,5 +1,5 @@
 // Fecha objetivo: 8 de mayo a las 00:00
-const targetDate = new Date('2025-05-08T00:00:00');
+const targetDate = new Date('2025-04-08T00:00:00');
 
 // Elementos del DOM
 const daysElement = document.getElementById('days');
